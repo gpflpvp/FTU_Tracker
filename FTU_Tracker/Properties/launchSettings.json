@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FTU_Tracker (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "FTU_Tracker (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
