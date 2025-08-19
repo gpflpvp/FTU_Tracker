@@ -3,14 +3,10 @@ using Microsoft.UI.Xaml.Controls;
 using System.Diagnostics;
 using System.ComponentModel;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace FTU_Tracker
 {
-    /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
-    /// </summary>
+ 
   
     public sealed partial class MainWindow : Window
     {
@@ -19,12 +15,26 @@ namespace FTU_Tracker
         public MainWindow()
         {
             InitializeComponent();
+            RootGrid.RequestedTheme = ElementTheme.Dark;
         }
 
-        //
+       private void btn_theme_switcher(object sender, RoutedEventArgs e)
+        {
+            if(this.Content is FrameworkElement root)
+            {
+                if (root.RequestedTheme == ElementTheme.Dark)
+                {
+                    root.RequestedTheme = ElementTheme.Light;
+                    Debug.WriteLine("Switched to Light Theme");
+                }
+                else
+                {
+                    root.RequestedTheme = ElementTheme.Dark;
+                    Debug.WriteLine("Switched to Dark Theme");
+                }
+            }
+        }
 
 
-
-        //
     }
 }
